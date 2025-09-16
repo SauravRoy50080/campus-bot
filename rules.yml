@@ -1,0 +1,12 @@
+version: "3.1"
+
+rules:
+- rule: Say goodbye anytime
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Fallback rule
+  steps:
+  - intent: fallback
+  - action: utter_fallback
