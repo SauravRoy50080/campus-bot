@@ -1,1 +1,29 @@
+action_endpoint:
+  url: "http://action_server:5055/webhook"
 
+10. docker-compose.yml
+version: "3.9"
+
+services:
+  rasa:
+    image: rasa/rasa:3.5.0-full
+    ports:
+      - "5005:5005"
+    volumes:
+      - ./:/app
+    command: ["run", "--enable-api", "--cors", "*"]
+
+  action_server:
+    image: rasa/rasa-sdk:3.5.0
+    ports:
+      - "5055:5055"
+    volumes:
+      - ./actions:/app/actions
+
+  mongo:
+    image: mongo:5.0
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data/mongo:/data/db
