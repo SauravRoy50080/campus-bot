@@ -1,1 +1,33 @@
+version: "3.1"
 
+intents:
+  - greet
+  - goodbye
+  - ask_fee_deadline
+  - ask_scholarship
+  - ask_timetable
+  - fallback
+
+responses:
+  utter_greet:
+    - text: "Hello! How can I assist you today?"
+    - text: "Hi there! Need help with fees, forms, or schedules?"
+
+  utter_goodbye:
+    - text: "Goodbye! Have a great day!"
+    - text: "See you soon!"
+
+  utter_ask_fee_deadline:
+    - text: "The last date to pay the fee is 25th September."
+
+  utter_ask_scholarship:
+    - text: "Scholarship forms are open until 15th October."
+
+  utter_ask_timetable:
+    - text: "You can download the latest timetable from the college website."
+
+  utter_fallback:
+    - text: "Sorry, I didn’t understand. Would you like me to connect you to an office staff member?"
+
+actions:
+  - action_log_to_mongo
