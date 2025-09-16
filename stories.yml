@@ -1,0 +1,14 @@
+version: "3.1"
+
+stories:
+- story: greet and ask fee
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_fee_deadline
+  - action: utter_ask_fee_deadline
+
+- story: ask timetable
+  steps:
+  - intent: ask_timetable
+  - action: utter_ask_timetable
