@@ -1,33 +1,22 @@
-from rasa_sdk import Action, Tracker
-from rasa_sdk.executor import CollectingDispatcher
-import sqlite3
+from rasa_sdk import Action
+from rasa_sdk.events import SlotSet
+import pymongo
+from datetime import datetime
 
-class ActionGetFee(Action):
-    def name(self) -> str:
-        return "action_get_fee"
-
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: dict):
-        course = tracker.get_slot("course")
-
-        conn = sqlite3.connect("campus.db")
-        cur = conn.cursor()
-        cur.execute("SELECT fee FROM courses WHERE name=?", (course,))
-        result = cur.fetchone()
-        conn.close()
-
-        if result:
-            dispatcher.utter_message(text=f"The fee for {course} is {result[0]}")
-        else:
-            dispatcher.utter_message(text="Sorry, I don’t know that course.")
-        return []
-
-class ActionHandoff(Action):
-    def name(self) -> str:
-        return "action_handoff"
+class ActionLogToMongo(Action):
+    def name(self):
+        return "action_log_to_mongo"
 
     def run(self, dispatcher, tracker, domain):
-        dispatcher.utter_message("Transferring you to a human agent...")
-        return []
+        client = pymongo.MongoClient("mongodb://mongo:27017/")
+        db = client["campus_bot"]
+        logs = db["conversations"]
 
+        log_entry = {
+            "user_message": tracker.latest_message.get('text'),
+            "intent": tracker.latest_message['intent'].get('name'),
+            "response": tracker.latest_message['text'],
+            "timestamp": datetime.now()
+        }
+        logs.insert_one(log_entry)
+        return []
