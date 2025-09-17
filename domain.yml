@@ -65,7 +65,6 @@ responses:
   utter_thank_you_submission:
     - text: "Thanks for the information. Our admissions team will contact you shortly."
 
-  # Missing responses for form slots
   utter_ask_name:
     - text: "What's your full name?"
 
@@ -74,6 +73,9 @@ responses:
 
   utter_ask_program:
     - text: "Which program are you interested in?"
+
+  utter_ask_timetable:
+    - text: "Could you please specify which timetable you want to see?"
 
 actions:
   - action_check_admission_period
