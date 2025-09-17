@@ -10,7 +10,7 @@ pipeline:
   - name: EntitySynonymMapper
   - name: ResponseSelector
     epochs: 100
-  - name: components.google_translate.GoogleTranslateComponent
+  
 
 policies:
   - name: MemoizationPolicy
