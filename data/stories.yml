@@ -1,14 +1,27 @@
 version: "3.1"
 
 stories:
-- story: greet and ask fee
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: ask_fee_deadline
-  - action: utter_ask_fee_deadline
+  - story: User asks about courses
+    steps:
+      - intent: faq_courses
+      - action: utter_faq_courses
 
-- story: ask timetable
-  steps:
-  - intent: ask_timetable
-  - action: utter_ask_timetable
+  - story: User asks for contact info
+    steps:
+      - intent: faq_contact
+      - action: utter_faq_contact
+
+  - story: User asks for location
+    steps:
+      - intent: faq_location
+      - action: utter_faq_location
+
+  - story: User asks about fees
+    steps:
+      - intent: ask_fees
+      - action: action_get_fees
+
+  - story: User inquires about admission
+    steps:
+      - intent: inquire_admission
+      - action: action_check_admission_period
