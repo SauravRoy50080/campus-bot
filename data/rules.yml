@@ -1,25 +1,19 @@
 version: "3.1"
 
 rules:
-
-  - rule: Greet the user
-    steps:
-      - intent: greet
-      - action: utter_greet
-
-  - rule: goodbye
+  - rule: Say goodbye anytime
     steps:
       - intent: goodbye
       - action: utter_goodbye
 
-  - rule: Provide admission information
+  - rule: Say thank you
+    steps:
+      - intent: thank_you
+      - action: utter_you_are_welcome
+
+  - rule: Activate admission form
     steps:
       - intent: ask_admission
-      - action: action_check_admission_period
-
-  - rule: Collect user details for admission inquiry
-    steps:
-      - intent: inquire_admission
       - action: admission_form
       - active_loop: admission_form
 
@@ -31,32 +25,7 @@ rules:
       - active_loop: null
       - action: utter_thank_you_submission
 
-  - rule: Provide fee details
-    steps:
-      - intent: ask_fees
-      - action: action_get_fees
-
-  - rule: Handle course FAQs
-    steps:
-      - intent: faq_courses
-      - action: utter_faq_courses
-
-  - rule: Handle contact FAQs
-    steps:
-      - intent: faq_contact
-      - action: utter_faq_contact
-
-  - rule: Handle location FAQs
-    steps:
-      - intent: faq_location
-      - action: utter_faq_location
-
-  - rule: Fallback for unrecognized input
+  - rule: Fallback rule
     steps:
       - intent: nlu_fallback
       - action: utter_default
-
-  - rule: Handle thanks
-    steps:
-      - intent: thank_you
-      - action: utter_you_are_welcome
