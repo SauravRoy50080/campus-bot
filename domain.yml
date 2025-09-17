@@ -65,14 +65,15 @@ responses:
   utter_thank_you_submission:
     - text: "Thanks for the information. Our admissions team will contact you shortly."
 
-  utter_ask_timetable:
-    - text: "Could you please specify which timetable you want to see?"
+  # Missing responses for form slots
+  utter_ask_name:
+    - text: "What's your full name?"
 
-  utter_ask_fee_deadline:
-    - text: "The fee deadline is September 30th."
+  utter_ask_email:
+    - text: "What's your email address?"
 
-  utter_ask_scholarship:
-    - text: "You can apply for scholarships through our portal."
+  utter_ask_program:
+    - text: "Which program are you interested in?"
 
 actions:
   - action_check_admission_period
