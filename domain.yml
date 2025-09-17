@@ -65,6 +65,15 @@ responses:
   utter_thank_you_submission:
     - text: "Thanks for the information. Our admissions team will contact you shortly."
 
+  utter_ask_timetable:
+    - text: "Could you please specify which timetable you want to see?"
+
+  utter_ask_fee_deadline:
+    - text: "The fee deadline is September 30th."
+
+  utter_ask_scholarship:
+    - text: "You can apply for scholarships through our portal."
+
 actions:
   - action_check_admission_period
   - action_get_fees
