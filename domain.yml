@@ -1,3 +1,5 @@
+version: "3.1"
+
 intents:
   - greet
   - goodbye
@@ -34,12 +36,9 @@ slots:
 forms:
   admission_form:
     required_slots:
-      name:
-        - type: from_text
-      email:
-        - type: from_text
-      program:
-        - type: from_text
+      - name
+      - email
+      - program
 
 responses:
   utter_greet:
