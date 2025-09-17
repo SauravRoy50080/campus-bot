@@ -1,33 +1,63 @@
-version: "3.1"
-
 intents:
   - greet
   - goodbye
-  - ask_fee_deadline
-  - ask_scholarship
-  - ask_timetable
-  - fallback
+  - ask_admission
+  - inquire_admission
+  - ask_fees
+  - faq_courses
+  - faq_contact
+  - faq_location
+  - nlu_fallback
+  - thank_you
+
+entities:
+  - course_name
+  - department
+
+slots:
+  name:
+    type: text
+    influence_conversation: false
+  email:
+    type: text
+    influence_conversation: false
+  program:
+    type: text
+    influence_conversation: true
+
+forms:
+  admission_form:
+    required_slots:
+      - name
+      - email
+      - program
 
 responses:
   utter_greet:
-    - text: "Hello! How can I assist you today?"
-    - text: "Hi there! Need help with fees, forms, or schedules?"
+    - text: "Hi! Welcome to College Assistant. How can I help you today?"
 
   utter_goodbye:
-    - text: "Goodbye! Have a great day!"
-    - text: "See you soon!"
+    - text: "Goodbye! Wishing you all the best."
 
-  utter_ask_fee_deadline:
-    - text: "The last date to pay the fee is 25th September."
+  utter_faq_courses:
+    - text: "We offer programs in Engineering, Arts, Science, and Business. Which are you interested in?"
 
-  utter_ask_scholarship:
-    - text: "Scholarship forms are open until 15th October."
+  utter_faq_contact:
+    - text: "You can contact us at +123-456-7890 or email info@college.edu."
 
-  utter_ask_timetable:
-    - text: "You can download the latest timetable from the college website."
+  utter_faq_location:
+    - text: "We're located at 123 University Lane, Springfield."
 
-  utter_fallback:
-    - text: "Sorry, I didn’t understand. Would you like me to connect you to an office staff member?"
+  utter_default:
+    - text: "I'm not sure I understood that. Can you try asking in a different way?"
+
+  utter_you_are_welcome:
+    - text: "You're welcome! Happy to help 😊"
+
+  utter_thank_you_submission:
+    - text: "Thanks for the information. Our admissions team will contact you shortly."
 
 actions:
-  - action_log_to_mongo
+  - action_check_admission_period
+  - action_get_fees
+
