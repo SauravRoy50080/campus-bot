@@ -9,13 +9,9 @@ tracker_store:
   type: SQL
   dialect: "postgresql"
   url: "postgresql://rasa:rasa@db:5432/rasa"
-  login_db: "rasa"
 
 # REST Channel (for web interface)
 rest:
-  # Optional basic auth
-  # username: "admin"
-  # password: "password"
 
 # Socket.IO Channel (for real-time chat)
 socketio:
