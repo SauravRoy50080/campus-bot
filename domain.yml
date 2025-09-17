@@ -1,3 +1,5 @@
+version: "3.1"
+
 intents:
   - greet
   - goodbye
@@ -18,12 +20,18 @@ slots:
   name:
     type: text
     influence_conversation: false
+    mappings:
+      - type: from_text
   email:
     type: text
     influence_conversation: false
+    mappings:
+      - type: from_text
   program:
     type: text
     influence_conversation: true
+    mappings:
+      - type: from_text
 
 forms:
   admission_form:
@@ -60,4 +68,3 @@ responses:
 actions:
   - action_check_admission_period
   - action_get_fees
-
