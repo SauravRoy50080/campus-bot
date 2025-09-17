@@ -11,60 +11,14 @@ tracker_store:
   url: "postgresql://rasa:rasa@db:5432/rasa"
   login_db: "rasa"
 
-# Event Broker (Optional - for event streaming)
-event_broker:
-  type: pika
-  url: "amqp://user:password@rabbitmq:5672/%2F"
-  queues:
-    - "rasa_events"
-
-# Lock Store (Optional - for distributed locking)
-lock_store:
-  type: redis
-  url: "redis://redis:6379/0"
-  password: "your_redis_password"
-
-# Model Storage (Optional - for remote model storage)
-model_storage:
-  storage: "aws"
-  path: "s3://your-bucket-name/models"
-  aws_access_key_id: "your_access_key"
-  aws_secret_access_key: "your_secret_key"
-  aws_region: "us-east-1"
-
-# NLU HTTP Server (Optional - for external NLU processing)
-nlu:
-  url: "http://nlu-server:5000"
-
-# Additional Configuration
-# ------------------------
-# You can add more endpoints as needed for your specific setup
-
-# Example: Custom REST channel
+# REST Channel (for web interface)
 rest:
-  # you can optionally configure basic auth for the rest channel
-  # username: user
-  # password: pass
+  # Optional basic auth
+  # username: "admin"
+  # password: "password"
 
-# Example: Socket.IO channel
+# Socket.IO Channel (for real-time chat)
 socketio:
   user_message_evt: user_uttered
   bot_message_evt: bot_uttered
   session_persistence: true
-
-# Example: Facebook Messenger channel
-facebook:
-  verify: "rasa-bot"
-  secret: "your_facebook_secret"
-  page-access-token: "your_page_access_token"
-
-# Example: Slack channel
-slack:
-  slack_token: "your_slack_token"
-  slack_channel: "your_slack_channel"
-  slack_signing_secret: "your_slack_signing_secret"
-
-# Example: Microsoft Bot Framework
-botframework:
-  app_id: "your_app_id"
-  app_password: "your_app_password"
