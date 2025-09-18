@@ -81,3 +81,4 @@ responses:
 actions:
   - action_check_admission_period
   - action_get_fees
+  - validate_admission_form
