@@ -2,6 +2,11 @@ version: "3.1"
 
 stories:
 
+- story: Greeting path
+  steps:
+    - intent: greet
+    - action: utter_greet
+
 - story: Admission inquiry flow
   steps:
     - intent: ask_admission
@@ -49,3 +54,22 @@ stories:
   steps:
     - intent: thank_you
     - action: utter_you_are_welcome
+
+- story: Form slot filling
+  steps:
+    - intent: inform
+      entities:
+        - name: "John Doe"
+    - action: admission_form
+    - active_loop: admission_form
+    - intent: inform
+      entities:
+        - email: "john@example.com"
+    - action: admission_form
+    - active_loop: admission_form
+    - intent: inform
+      entities:
+        - program: "Engineering"
+    - action: admission_form
+    - active_loop: null
+    - action: utter_thank_you_submission
