@@ -1,20 +1,24 @@
 # endpoints.yml
 
-# Action Server Endpoint
+# Action Server (for custom actions in actions.py)
 action_endpoint:
-  url: "http://action_server:5055/webhook"
+  url: "http://localhost:5055/webhook"
 
-# Tracker Store Configuration (PostgreSQL)
+# Tracker Store (optional, to store conversation history in a database)
+# Uncomment if you want to use a database like PostgreSQL or MongoDB
 tracker_store:
-  type: SQL
-  dialect: "postgresql"
-  url: "postgresql://rasa:rasa@db:5432/rasa"
+  type: sql
+   dialect: "sqlite"  # can be "postgresql", "mysql", etc.
+   db: "rasa.db"
+   username: "user"
+   password: "password"
+   host: "localhost"
+   port: 5432
 
-# REST Channel (for web interface)
-rest:
-
-# Socket.IO Channel (for real-time chat)
-socketio:
-  user_message_evt: user_uttered
-  bot_message_evt: bot_uttered
-  session_persistence: true
+# Event Broker (optional, for streaming events to Kafka or RabbitMQ)
+ event_broker:
+   type: "pika"
+   url: "localhost"
+   username: "guest"
+   password: "guest"
+   queue: "rasa_events"
