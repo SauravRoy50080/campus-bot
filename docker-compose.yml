@@ -13,7 +13,8 @@ services:
       - ./data:/app/data
       - ./credentials.yml:/app/credentials.yml
       - ./endpoints.yml:/app/endpoints.yml
-      - ./components:/app/components   # your Google Translate component
+      - ./components:/app/components
+      - ./requirements.txt:/app/requirements.txt
     command: ["run", "--enable-api", "--cors", "*"]
     depends_on:
       - action_server
@@ -28,24 +29,24 @@ services:
       - rasa-network
 
   action_server:
-    image: rasa/rasa-sdk:3.7.0
+    build:
+      context: .
+      dockerfile: Dockerfile.actions
     ports:
       - "5055:5055"
     volumes:
       - ./actions:/app/actions
-    command: ["start", "--actions", "actions"]
+    depends_on:
+      - db
     networks:
       - rasa-network
 
-  # Postgres tracker store for conversation history
   db:
     image: postgres:13
     environment:
       POSTGRES_USER: rasa
       POSTGRES_PASSWORD: rasa
       POSTGRES_DB: rasa
-    ports:
-      - "5432:5432"
     volumes:
       - postgres-data:/var/lib/postgresql/data
     networks:
