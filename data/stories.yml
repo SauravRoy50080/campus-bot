@@ -8,19 +8,8 @@ stories:
     - action: admission_form
     - active_loop: admission_form
     - slot_was_set:
-        - requested_slot: name
-    - intent: inform
-      entities:
         - name: "John Doe"
-    - slot_was_set:
-        - requested_slot: email
-    - intent: inform
-      entities:
         - email: "john@example.com"
-    - slot_was_set:
-        - requested_slot: program
-    - intent: inform
-      entities:
         - program: "Engineering"
     - active_loop: null
     - action: utter_thank_you_submission
@@ -34,3 +23,23 @@ stories:
   steps:
     - intent: inquire_admission
     - action: action_check_admission_period
+
+- story: Course details flow
+  steps:
+    - intent: faq_courses
+    - action: utter_faq_courses
+
+- story: Contact details flow
+  steps:
+    - intent: faq_contact
+    - action: utter_faq_contact
+
+- story: Location details flow
+  steps:
+    - intent: faq_location
+    - action: utter_faq_location
+
+- story: Timetable request
+  steps:
+    - intent: ask_timetable
+    - action: utter_ask_timetable
