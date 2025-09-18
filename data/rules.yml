@@ -59,3 +59,7 @@ rules:
   steps:
     - intent: ask_hostel
     - action: utter_ask_hostel
+- rule: mess information
+  steps:
+    - intent: ask_mess_food
+    - action: utter_ask_mess_food
