@@ -80,7 +80,18 @@ nlu:
     - appreciate it
     - thanks a lot
     - thank you so much
-
+- intent: ask_hostel
+  examples: |
+    - what are the hostel facilities
+    - for how long is the hostel
+    - fees of the hostel
+    - is the hostel inside the campus
+    - types of hostel
+- intent: ask_mess_food
+  examples: |
+    - quality of the food provided
+    - what is the fee of mess 
+    - what kind of food is provided 
 - intent: nlu_fallback
   examples: |
     - asdfgh
