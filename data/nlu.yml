@@ -1,99 +1,181 @@
 version: "3.1"
 
 nlu:
-
 - intent: greet
   examples: |
     - hi
     - hello
     - hey
     - good morning
+    - good afternoon
     - good evening
+    - hola
+    - buenos días
+    - buenas tardes
+    - bonjour
+    - salut
+    - bon après-midi
+    - bonsoir
 
 - intent: goodbye
   examples: |
     - bye
     - goodbye
     - see you later
+    - have a nice day
     - take care
+    - adiós
+    - hasta luego
+    - hasta mañana
+    - au revoir
+    - à bientôt
+    - bonne journée
+    - bonne soirée
 
 - intent: ask_admission
   examples: |
-    - I want to apply for admission
-    - How can I get admission?
+    - How do I apply for admission?
+    - What are the admission requirements?
     - admission process
-    - I want to join your college
-    - tell me about admissions
+    - how to apply
+    - admission criteria
+    - cómo aplicar para la admisión
+    - requisitos de admisión
+    - proceso de admisión
+    - comment postuler
+    - critères d'admission
+    - processus d'admission
 
 - intent: inquire_admission
   examples: |
-    - Is admission open now?
-    - When is the admission period?
-    - Are admissions going on?
-    - Can I apply now?
-    - When do admissions start?
+    - Tell me about admission
+    - admission information
+    - admission details
+    - explain admission process
+    - información sobre admisión
+    - detalles de admisión
+    - explique el proceso de admisión
+    - renseignements sur l'admission
+    - détails d'admission
+    - expliquez le processus d'admission
 
 - intent: ask_fees
   examples: |
-    - What are the fees for engineering?
-    - Tell me the fee structure
-    - How much is the tuition?
-    - What are the course charges?
-    - Fees for business program
+    - What are the tuition fees?
+    - how much is the tuition?
+    - fee structure
+    - cost of courses
+    - payment options
+    - cuáles son las tarifas de matrícula
+    - cuánto cuesta la matrícula
+    - estructura de tarifas
+    - opciones de pago
+    - quels sont les frais de scolarité
+    - combien coûte la scolarité
+    - structure des frais
+    - options de paiement
 
 - intent: faq_courses
   examples: |
     - What courses do you offer?
-    - List available programs
-    - Tell me about courses
-    - What programs are there?
-    - Which streams are available?
+    - available programs
+    - what programs are available
+    - list of courses
+    - course catalog
+    - qué cursos ofrecen
+    - programas disponibles
+    - lista de cursos
+    - catálogo de cursos
+    - quels programmes proposez-vous
+    - programmes disponibles
+    - liste des cours
+    - catalogue des cours
 
 - intent: faq_contact
   examples: |
-    - How can I contact the college?
-    - Give me contact details
-    - Phone number please
-    - What's your email?
-    - Contact info
+    - How can I contact you?
+    - contact information
+    - phone number
+    - email address
+    - how to reach you
+    - cómo puedo contactarlos
+    - información de contacto
+    - número de teléfono
+    - dirección de correo electrónico
+    - comment puis-je vous contacter
+    - informations de contact
+    - numéro de téléphone
+    - adresse e-mail
 
 - intent: faq_location
   examples: |
     - Where is the college located?
-    - Give me the address
-    - What's the location?
-    - Where is your campus?
-    - Tell me the college address
+    - college address
+    - campus location
+    - how to get there
+    - directions
+    - dónde está ubicada la universidad
+    - dirección de la universidad
+    - ubicación del campus
+    - cómo llegar
+    - indicaciones
+    - où se trouve le collège
+    - adresse du collège
+    - emplacement du campus
+    - comment s'y rendre
+    - directions
 
 - intent: ask_timetable
   examples: |
-    - Show me the timetable
-    - I want to see my class timetable
-    - timetable please
-    - Can you show timetable?
-    - Where is the schedule?
+    - Can I see the timetable?
+    - show me the schedule
+    - when are classes?
+    - class schedule
+    - puedo ver el horario?
+    - muéstrame el horario
+    - ¿cuándo son las clases?
+    - horario de clases
+    - puis-je voir l'horaire?
+    - montre-moi l'horaire
+    - quand sont les cours?
+    - horaire des cours
+
+- intent: nlu_fallback
+  examples: |
+    - I don't understand
+    - what does that mean
+    - explain differently
+    - I'm confused
+    - no entiendo
+    - qué significa eso
+    - explique de otra manera
+    - estoy confundido
+    - je ne comprends pas
+    - qu'est-ce que cela signifie
+    - expliquez différemment
+    - je suis confus
 
 - intent: thank_you
   examples: |
-    - thanks
     - thank you
+    - thanks
     - appreciate it
-    - thanks a lot
-    - thank you so much
-- intent: ask_hostel
+    - grateful
+    - muchas gracias
+    - te agradezco
+    - agradecido
+    - merci
+    - je vous remercie
+    - reconnaissant
+
+- intent: inform
   examples: |
-    - what are the hostel facilities
-    - for how long is the hostel
-    - fees of the hostel
-    - is the hostel inside the campus
-    - types of hostel
-- intent: ask_mess_food
-  examples: |
-    - quality of the food provided
-    - what is the fee of mess 
-    - what kind of food is provided 
-- intent: nlu_fallback
-  examples: |
-    - asdfgh
-    - blah blah
-    - random words
+    - My name is [John Doe](name)
+    - You can call me [Jane Smith](name)
+    - I'm [Michael Johnson](name)
+    - My email is [john@example.com](email)
+    - [jane@example.com](email)
+    - You can reach me at [michael@example.com](email)
+    - I'm interested in [Engineering](program)
+    - I want to study [Business](program)
+    - [Computer Science](program) is my choice
