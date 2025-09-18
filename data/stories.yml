@@ -7,10 +7,6 @@ stories:
     - intent: ask_admission
     - action: admission_form
     - active_loop: admission_form
-    - slot_was_set:
-        - name: "John Doe"
-        - email: "john@example.com"
-        - program: "Engineering"
     - active_loop: null
     - action: utter_thank_you_submission
 
@@ -24,32 +20,32 @@ stories:
     - intent: inquire_admission
     - action: action_check_admission_period
 
-- story: Course details flow
+- story: User asks about courses
   steps:
     - intent: faq_courses
     - action: utter_faq_courses
 
-- story: Contact details flow
+- story: User asks for contact info
   steps:
     - intent: faq_contact
     - action: utter_faq_contact
 
-- story: Location details flow
+- story: User asks for location
   steps:
     - intent: faq_location
     - action: utter_faq_location
 
-- story: Timetable request
+- story: User asks about timetable
   steps:
     - intent: ask_timetable
     - action: utter_ask_timetable
 
-- story: hostel request
+- story: User says goodbye
   steps:
-    - intent: ask_hostel
-    - action: utter_ask_hostel
+    - intent: goodbye
+    - action: utter_goodbye
 
-- story: mess food request
+- story: User says thank you
   steps:
-    - intent: ask_mess_food
-    - action: utter_ask_mess_food
+    - intent: thank_you
+    - action: utter_you_are_welcome
