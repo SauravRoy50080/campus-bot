@@ -43,3 +43,13 @@ stories:
   steps:
     - intent: ask_timetable
     - action: utter_ask_timetable
+
+- story: hostel request
+  steps:
+    - intent: ask_hostel
+    - action: utter_ask_hostel
+
+- story: mess food request
+  steps:
+    - intent: ask_mess_food
+    - action: utter_ask_mess_food
