@@ -1,62 +1,88 @@
 version: "3.1"
 
 nlu:
+
 - intent: greet
   examples: |
     - hi
     - hello
     - hey
+    - good morning
+    - good evening
 
 - intent: goodbye
   examples: |
     - bye
     - goodbye
-    - see you
+    - see you later
+    - take care
 
 - intent: ask_admission
   examples: |
     - I want to apply for admission
     - How can I get admission?
     - admission process
+    - I want to join your college
+    - tell me about admissions
 
 - intent: inquire_admission
   examples: |
     - Is admission open now?
     - When is the admission period?
     - Are admissions going on?
+    - Can I apply now?
+    - When do admissions start?
 
 - intent: ask_fees
   examples: |
     - What are the fees for engineering?
     - Tell me the fee structure
     - How much is the tuition?
+    - What are the course charges?
+    - Fees for business program
 
 - intent: faq_courses
   examples: |
     - What courses do you offer?
     - List available programs
     - Tell me about courses
+    - What programs are there?
+    - Which streams are available?
 
 - intent: faq_contact
   examples: |
     - How can I contact the college?
     - Give me contact details
     - Phone number please
+    - What's your email?
+    - Contact info
 
 - intent: faq_location
   examples: |
     - Where is the college located?
     - Give me the address
     - What's the location?
+    - Where is your campus?
+    - Tell me the college address
 
 - intent: ask_timetable
   examples: |
     - Show me the timetable
     - I want to see my class timetable
     - timetable please
+    - Can you show timetable?
+    - Where is the schedule?
 
 - intent: thank_you
   examples: |
     - thanks
     - thank you
     - appreciate it
+    - thanks a lot
+    - thank you so much
+
+- intent: nlu_fallback
+  examples: |
+    - asdfgh
+    - blah blah
+    - random words
