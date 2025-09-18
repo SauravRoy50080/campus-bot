@@ -37,6 +37,11 @@ slots:
     influence_conversation: true
     mappings:
       - type: from_text
+  language:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
 
 forms:
   admission_form:
