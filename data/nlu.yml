@@ -6,149 +6,57 @@ nlu:
     - hi
     - hello
     - hey
-    - good morning
-    - good afternoon
-    - good evening
-    - hola
-    - buenos días
-    - buenas tardes
-    - bonjour
-    - salut
-    - bon après-midi
-    - bonsoir
 
 - intent: goodbye
   examples: |
     - bye
     - goodbye
-    - see you later
-    - have a nice day
-    - take care
-    - adiós
-    - hasta luego
-    - hasta mañana
-    - au revoir
-    - à bientôt
-    - bonne journée
-    - bonne soirée
+    - see you
 
 - intent: ask_admission
   examples: |
-    - How do I apply for admission?
-    - What are the admission requirements?
+    - I want to apply for admission
+    - How can I get admission?
     - admission process
-    - how to apply
-    - admission criteria
-    - cómo aplicar para la admisión
-    - requisitos de admisión
-    - proceso de admisión
-    - comment postuler
-    - critères d'admission
-    - processus d'admission
 
 - intent: inquire_admission
   examples: |
-    - Tell me about admission
-    - admission information
-    - admission details
-    - explain admission process
-    - información sobre admisión
-    - detalles de admisión
-    - explique el proceso de admisión
-    - renseignements sur l'admission
-    - détails d'admission
-    - expliquez le processus d'admission
+    - Is admission open now?
+    - When is the admission period?
+    - Are admissions going on?
 
 - intent: ask_fees
   examples: |
-    - What are the tuition fees?
-    - how much is the tuition?
-    - fee structure
-    - cost of courses
-    - payment options
-    - cuáles son las tarifas de matrícula
-    - cuánto cuesta la matrícula
-    - estructura de tarifas
-    - opciones de pago
-    - quels sont les frais de scolarité
-    - combien coûte la scolarité
-    - structure des frais
-    - options de paiement
+    - What are the fees for engineering?
+    - Tell me the fee structure
+    - How much is the tuition?
 
 - intent: faq_courses
   examples: |
     - What courses do you offer?
-    - available programs
-    - what programs are available
-    - list of courses
-    - course catalog
-    - qué cursos ofrecen
-    - programas disponibles
-    - lista de cursos
-    - catálogo de cursos
-    - quels programmes proposez-vous
-    - programmes disponibles
-    - liste des cours
-    - catalogue des cours
+    - List available programs
+    - Tell me about courses
 
 - intent: faq_contact
   examples: |
-    - How can I contact you?
-    - contact information
-    - phone number
-    - email address
-    - how to reach you
-    - cómo puedo contactarlos
-    - información de contacto
-    - número de teléfono
-    - dirección de correo electrónico
-    - comment puis-je vous contacter
-    - informations de contact
-    - numéro de téléphone
-    - adresse e-mail
+    - How can I contact the college?
+    - Give me contact details
+    - Phone number please
 
 - intent: faq_location
   examples: |
     - Where is the college located?
-    - college address
-    - campus location
-    - how to get there
-    - directions
-    - dónde está ubicada la universidad
-    - dirección de la universidad
-    - ubicación del campus
-    - cómo llegar
-    - indicaciones
-    - où se trouve le collège
-    - adresse du collège
-    - emplacement du campus
-    - comment s'y rendre
-    - directions
+    - Give me the address
+    - What's the location?
 
-- intent: nlu_fallback
+- intent: ask_timetable
   examples: |
-    - I don't understand
-    - what does that mean
-    - explain differently
-    - I'm confused
-    - no entiendo
-    - qué significa eso
-    - explique de otra manera
-    - estoy confundido
-    - je ne comprends pas
-    - qu'est-ce que cela signifie
-    - expliquez différemment
-    - je suis confus
+    - Show me the timetable
+    - I want to see my class timetable
+    - timetable please
 
 - intent: thank_you
   examples: |
-    - thank you
     - thanks
+    - thank you
     - appreciate it
-    - grateful
-    - muchas gracias
-    - te agradezco
-    - agradecido
-    - merci
-    - je vous remercie
-    - reconnaissant
