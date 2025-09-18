@@ -10,14 +10,16 @@ intents:
   - faq_contact
   - faq_location
   - ask_timetable
-  - ask_hostel
-  - ask_mess_food
   - nlu_fallback
   - thank_you
+  - inform
 
 entities:
   - course_name
   - department
+  - name
+  - email
+  - program
 
 slots:
   name:
@@ -79,11 +81,11 @@ responses:
 
   utter_ask_timetable:
     - text: "Could you please specify which timetable you want to see?"
-  utter_ask_timetable:
-    - text: "what do you want to know about the hostel facilities?"
-  utter_ask_mess_food:
-    - text: "ohh glad to know you are interested in knowing mess food, what do you wanna know regarding NFSU Mess?"
 
 actions:
   - action_check_admission_period
   - action_get_fees
+  - action_provide_admission_info
+  - action_provide_course_info
+  - action_provide_facility_info
+  - action_provide_event_info
