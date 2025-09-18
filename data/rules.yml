@@ -55,3 +55,7 @@ rules:
     - action: admission_form
     - active_loop: null
     - action: utter_thank_you_submission
+- rule: give hostel information
+  steps:
+    - intent: ask_hostel
+    - action: utter_ask_hostel
