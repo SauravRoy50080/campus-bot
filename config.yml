@@ -1,6 +1,15 @@
 language: en
 
 pipeline:
+  # First, translate non-English messages to English
+  - name: components.google_translate.GoogleTranslateComponent
+    base_language: en
+    supported_languages:
+      - en
+      - es
+      - fr
+      
+  # Then process with standard NLU pipeline
   - name: WhitespaceTokenizer
   - name: RegexFeaturizer
   - name: LexicalSyntacticFeaturizer
@@ -10,7 +19,6 @@ pipeline:
   - name: EntitySynonymMapper
   - name: ResponseSelector
     epochs: 100
-  
 
 policies:
   - name: MemoizationPolicy
