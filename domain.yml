@@ -10,6 +10,7 @@ intents:
   - faq_contact
   - faq_location
   - ask_timetable
+  - ask_hostel
   - nlu_fallback
   - thank_you
 
@@ -77,6 +78,8 @@ responses:
 
   utter_ask_timetable:
     - text: "Could you please specify which timetable you want to see?"
+  utter_ask_timetable:
+    - text: "what do you want to know about the hostel facilities?"
 
 actions:
   - action_check_admission_period
