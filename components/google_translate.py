@@ -6,7 +6,7 @@ from rasa.engine.storage.resource import Resource
 from rasa.engine.storage.storage import ModelStorage
 from rasa.shared.nlu.training_data.message import Message
 from rasa.shared.nlu.training_data.training_data import TrainingData
-from googletrans import Translator  # Remove LANGUAGES import
+from googletrans import Translator
 
 @DefaultV1Recipe.register(
     [DefaultV1Recipe.ComponentType.MESSAGE_TOKENIZER], is_trainable=False
@@ -31,7 +31,16 @@ class GoogleTranslateComponent(GraphComponent):
         resource: Resource,
         execution_context: ExecutionContext,
     ) -> None:
-        super().__init__(config, model_storage, resource, execution_context)
+        # Call parent __init__ without arguments
+        super().__init__()
+        
+        # Store the parameters as instance variables
+        self._config = config
+        self._model_storage = model_storage
+        self._resource = resource
+        self._execution_context = execution_context
+        
+        # Initialize translator and settings
         self.translator = Translator()
         self._base_language = config.get("base_language", "en")
         self._supported_languages = config.get("supported_languages", ["en", "es", "fr"])
@@ -94,4 +103,3 @@ class GoogleTranslateComponent(GraphComponent):
         **kwargs: Any,
     ) -> GraphComponent:
         return cls(config, model_storage, resource, execution_context)
-     
