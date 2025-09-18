@@ -1,27 +1,25 @@
 version: "3.1"
 
 stories:
-  - story: User asks about courses
-    steps:
-      - intent: faq_courses
-      - action: utter_faq_courses
 
-  - story: User asks for contact info
-    steps:
-      - intent: faq_contact
-      - action: utter_faq_contact
+- story: Admission inquiry flow
+  steps:
+    - intent: ask_admission
+    - action: admission_form
+    - active_loop: admission_form
+    - slot_was_set:
+        - name: "John Doe"
+        - email: "john@example.com"
+        - program: "Engineering"
+    - active_loop: null
+    - action: utter_thank_you_submission
 
-  - story: User asks for location
-    steps:
-      - intent: faq_location
-      - action: utter_faq_location
+- story: Ask for fees
+  steps:
+    - intent: ask_fees
+    - action: action_get_fees
 
-  - story: User asks about fees
-    steps:
-      - intent: ask_fees
-      - action: action_get_fees
-
-  - story: User inquires about admission
-    steps:
-      - intent: inquire_admission
-      - action: action_check_admission_period
+- story: Check admission period
+  steps:
+    - intent: inquire_admission
+    - action: action_check_admission_period
