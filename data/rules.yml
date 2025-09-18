@@ -1,65 +1,31 @@
 version: "3.1"
 
 rules:
+  - rule: Say goodbye anytime
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
 
-- rule: Greet the user
-  steps:
-    - intent: greet
-    - action: utter_greet
+  - rule: Say thank you
+    steps:
+      - intent: thank_you
+      - action: utter_you_are_welcome
 
-- rule: Say goodbye
-  steps:
-    - intent: goodbye
-    - action: utter_goodbye
+  - rule: Activate admission form
+    steps:
+      - intent: ask_admission
+      - action: admission_form
+      - active_loop: admission_form
 
-- rule: Thank you response
-  steps:
-    - intent: thank_you
-    - action: utter_you_are_welcome
+  - rule: Submit form
+    condition:
+      - active_loop: admission_form
+    steps:
+      - action: admission_form
+      - active_loop: null
+      - action: utter_thank_you_submission
 
-- rule: Fallback
-  steps:
-    - intent: nlu_fallback
-    - action: utter_default
-
-- rule: Provide course info
-  steps:
-    - intent: faq_courses
-    - action: utter_faq_courses
-
-- rule: Provide contact info
-  steps:
-    - intent: faq_contact
-    - action: utter_faq_contact
-
-- rule: Provide location info
-  steps:
-    - intent: faq_location
-    - action: utter_faq_location
-
-- rule: Ask timetable
-  steps:
-    - intent: ask_timetable
-    - action: utter_ask_timetable
-
-- rule: Activate admission form
-  steps:
-    - intent: ask_admission
-    - action: admission_form
-    - active_loop: admission_form
-
-- rule: Submit admission form
-  condition:
-    - active_loop: admission_form
-  steps:
-    - action: admission_form
-    - active_loop: null
-    - action: utter_thank_you_submission
-- rule: give hostel information
-  steps:
-    - intent: ask_hostel
-    - action: utter_ask_hostel
-- rule: mess information
-  steps:
-    - intent: ask_mess_food
-    - action: utter_ask_mess_food
+  - rule: Fallback rule
+    steps:
+      - intent: nlu_fallback
+      - action: utter_default
