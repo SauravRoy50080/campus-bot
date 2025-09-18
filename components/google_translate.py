@@ -1,5 +1,3 @@
-# components/google_translate.py
-
 from typing import Any, Text, Dict, List, Optional
 
 from rasa.engine.recipes.default_recipe import DefaultV1Recipe
