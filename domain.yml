@@ -9,6 +9,7 @@ intents:
   - faq_courses
   - faq_contact
   - faq_location
+  - ask_timetable
   - nlu_fallback
   - thank_you
 
@@ -63,7 +64,7 @@ responses:
     - text: "You're welcome! Happy to help 😊"
 
   utter_thank_you_submission:
-    - text: "Thanks for the information. Our admissions team will contact you shortly."
+    - text: "Thanks {name}, our admissions team will contact you at {email} regarding the {program} program."
 
   utter_ask_name:
     - text: "What's your full name?"
